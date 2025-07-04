@@ -33,8 +33,9 @@
 
 		(simple-service 'env-vars-service
 				home-environment-variables-service-type
-				'(("TERM" . "xterm-256color")
-				  ("NIXPKGS_ALLOW_UNFREE" . "1")))
+				`(("TERM" . "xterm-256color")
+				  ("NIXPKGS_ALLOW_UNFREE" . "1")
+				  ("PATH" . ,(string-append (dirname config-root) "/guix-config/bin:$PATH"))))
 
 		(service home-dotfiles-service-type
 			 (home-dotfiles-configuration (directories '("./dotfiles"))
