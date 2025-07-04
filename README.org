@@ -1,0 +1,69 @@
+#+TITLE: GNU Guix Home + dotfiles
+#+OPTIONS: toc:nil num:nil
+
+[[./assets/screenshot.png]]
+
+This repository contains my personal dotfiles and *GNU Guix Home* config.
+
+* Links
+
+- [[https://git.ch4og.com/ch4og/guix-config][My Guix System configuration]]
+- [[https://git.ch4og.com/ch4og/pognul-guix-channel][My personal Guix channel]]
+
+* Dotfiles
+
+Personal dotfiles are organized using a layout compatible with [[https://www.gnu.org/software/stow/manual/stow.html#Introduction][GNU Stow]].
+
+Each subdirectory here represents a *"package"* of configuration files,
+automatically linked into =~= via the =home-dotfiles-service-type=.
+
+** Directory Mapping Example
+
+| Source                                      | Dest in =$HOME=                          |
+|------------------------------------------------------+------------------------------------------|
+| =dotfiles/hyprland/.config/hypr/hyprland.conf=       | =~/.config/hypr/hyprland.conf=           |
+| =dotfiles/zsh/.zshrc=                                | =~/.zshrc=                               |
+| =dotfiles/rofi/.local/share/rofi/themes/custom.rasi= | =~/.local/share/rofi/themes/custom.rasi= |
+
+** Usage
+
+*** Guix Home
+
+#+begin_src scheme
+  (service home-dotfiles-service-type
+  	 (home-dotfiles-configuration
+  	  (directories '("./dotfiles"))
+  	  (layout 'stow)
+  	  (packages '("zsh" "hyprland" "other-package-name"))))
+#+end_src
+
+*** GNU Stow (recommended on non-Guix)
+
+#+begin_src sh
+  cd dotfiles
+  stow hyprland zsh other-package-name -t ~
+#+end_src
+
+*** Manual Copying
+
+#+begin_src sh
+  cp dotfiles/zsh/.zshrc ~/.zshrc
+  cp dotfiles/hyprland/.* ~ -r
+  cp dotfiles/rofi/.local/share/rofi/themes/custom.rasi ~/.local/share/rofi/themes/custom.rasi
+#+end_src
+
+* Acknowledgments
+
+Big thanks to people and projects that inspired me:
+
+- [[https://codeberg.org/agx-r][@agx-r]] (Codeberg)
+- [[https://codeberg.org/daviwil][@daviwil]] (Codeberg & [[https://systemcrafters.net/][System Crafters]])
+- [[https://github.com/sarg/dotfiles][sarg/dotfiles]] (GitHub)
+- [[https://github.com/end-4/dots-hyprland][end-4/dots-hyprland]] (GitHub)
+- [[https://github.com/caelestia-dots/shell][caelestia-dots/shell]] (GitHub)
+
+No licensed code was copied without credit or compliance. Some code was inspired, not copied or modified.
+All files that include code by others have a note about it in their heading.
+
+All other files — which do *not* contain such a notice — are authored by me and distributed under the GNU GPL v3.
+Licenses for reused third-party code are included in this repo.
