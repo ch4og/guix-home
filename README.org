@@ -7,7 +7,7 @@ This repository contains my personal dotfiles and *GNU Guix Home* config.
 
 * Links
 
-- [[https://git.ch4og.com/ch4og/guix-config][My Guix System configuration]]
+- [[https://git.ch4og.com/ch4og/guixsd-config][My Guix System configuration]]
 - [[https://git.ch4og.com/ch4og/pognul-guix-channel][My personal Guix channel]]
 
 * Dotfiles
