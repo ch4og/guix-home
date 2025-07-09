@@ -2,7 +2,13 @@
 (use-modules
  (guix utils)
  (gnu packages)
- (gnu packages wm))
+ (gnu packages wm)
+ (guix transformations)
+ (nongnu packages nvidia))
+(define transform
+  (options->transformation
+   '((with-graft . "mesa=nvda"))))
+(map transform
 (map specification->package
      '("bat"
        "blueman"
@@ -60,4 +66,4 @@
        "zoom"
        "zoxide"
        "zsh"
-       "zsh-syntax-highlighting"))
+       "zsh-syntax-highlighting")))
