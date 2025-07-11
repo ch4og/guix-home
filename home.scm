@@ -46,6 +46,7 @@
 										       "nix"
 										       "nvim"
 										       "rofi"
+										       "ssh"
 										       "starship"
 										       "hyprland"
 										       "hyprpaper"
