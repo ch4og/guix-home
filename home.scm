@@ -6,6 +6,7 @@
              (gnu home services sound)
              (gnu home services desktop)
              (gnu home services dotfiles)
+             (gnu home services gnupg)
              (guix gexp)
              (guix packages)
              (guix download)
@@ -32,7 +33,11 @@
 		      (services
 		       (append (list (service home-dbus-service-type)
 				     (service home-pipewire-service-type)
-
+				     (service home-gpg-agent-service-type
+					      (home-gpg-agent-configuration
+					       (pinentry-program
+						(file-append (specification->package "pinentry") "/bin/pinentry"))
+					       (ssh-support? #t)))
 				     (simple-service 'env-vars-service
 						     home-environment-variables-service-type
 						     `(("TERM" . "xterm-256color")
