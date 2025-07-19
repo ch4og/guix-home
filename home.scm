@@ -60,6 +60,8 @@
 										       "waybar"
 										       "xdg-desktop-portal"
 										       "zsh"))))
+				     (service home-files-service-type
+					      `((".wakatime/wakatime-cli" ,(file-append (specification->package "wakatime-cli") "/bin/wakatime-cli"))))
 
 				     (simple-service 'nix-channel-init home-activation-service-type
 						     #~(begin
