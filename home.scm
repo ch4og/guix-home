@@ -42,6 +42,7 @@
 						     home-environment-variables-service-type
 						     `(("TERM" . "xterm-256color")
 						       ("NIXPKGS_ALLOW_UNFREE" . "1")
+						       ("WLR_BACKENDS" . "libinput,drm")
 						       ("PATH" . ,(string-append (dirname config-root) "/guixsd-config/bin:$PATH"))))
 
 				     (service home-dotfiles-service-type
@@ -49,6 +50,7 @@
 									   (layout 'stow)
 									   (packages '("fastfetch"
 										       "kitty"
+										       "mwc"
 										       "nix"
 										       "nvim"
 										       "rofi"

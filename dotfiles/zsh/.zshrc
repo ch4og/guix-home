@@ -57,7 +57,7 @@ exist starship && eval "$(starship init zsh)"
 exist zoxide && eval "$(zoxide init zsh)" && alias cd=z
 
 if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
-    exec Hyprland
+    exec mwc
 fi
 
 [[ -z "$GUIX_ENVIRONMENT" && -z "$IN_NIX_SHELL" ]] && exist fastfetch && fastfetch
