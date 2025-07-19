@@ -54,8 +54,6 @@
 										       "rofi"
 										       "ssh"
 										       "starship"
-										       "hyprland"
-										       "hyprpaper"
 										       "quickshell"
 										       "waybar"
 										       "xdg-desktop-portal"
