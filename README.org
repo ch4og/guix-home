@@ -19,9 +19,9 @@ automatically linked into =~= via the =home-dotfiles-service-type=.
 
 ** Directory Mapping Example
 
-| Source                                      | Dest in =$HOME=                          |
+| Source                                               | Dest in =$HOME=                          |
 |------------------------------------------------------+------------------------------------------|
-| =dotfiles/hyprland/.config/hypr/hyprland.conf=       | =~/.config/hypr/hyprland.conf=           |
+| =dotfiles/mwc/.config/mwc/mwc.conf=                  | =~/.config/mwc/mwc.conf=           |
 | =dotfiles/zsh/.zshrc=                                | =~/.zshrc=                               |
 | =dotfiles/rofi/.local/share/rofi/themes/custom.rasi= | =~/.local/share/rofi/themes/custom.rasi= |
 
@@ -34,21 +34,21 @@ automatically linked into =~= via the =home-dotfiles-service-type=.
   	 (home-dotfiles-configuration
   	  (directories '("./dotfiles"))
   	  (layout 'stow)
-  	  (packages '("zsh" "hyprland" "other-package-name"))))
+  	  (packages '("zsh" "mwc" "other-package-name"))))
 #+end_src
 
 *** GNU Stow (recommended on non-Guix)
 
 #+begin_src sh
   cd dotfiles
-  stow hyprland zsh other-package-name -t ~
+  stow mwc zsh other-package-name -t ~
 #+end_src
 
 *** Manual Copying
 
 #+begin_src sh
   cp dotfiles/zsh/.zshrc ~/.zshrc
-  cp dotfiles/hyprland/.* ~ -r
+  cp dotfiles/mwc/.* ~ -r
   cp dotfiles/rofi/.local/share/rofi/themes/custom.rasi ~/.local/share/rofi/themes/custom.rasi
 #+end_src
 
