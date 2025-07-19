@@ -41,6 +41,7 @@
 				     (simple-service 'env-vars-service
 						     home-environment-variables-service-type
 						     `(("TERM" . "xterm-256color")
+						       ("GPG_TTY" . "$(tty)")
 						       ("NIXPKGS_ALLOW_UNFREE" . "1")
 						       ("WLR_BACKENDS" . "libinput,drm")
 						       ("PATH" . ,(string-append (dirname config-root) "/guixsd-config/bin:$PATH"))))
