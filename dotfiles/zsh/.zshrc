@@ -1,7 +1,8 @@
 # Copyright © 2025 Nikita Mitasov <mitanick@ya.ru>
-typeset -U path cdpath fpath manpath
 fpath+=($HOME/.config/zsh/completions)
-autoload -U compinit && compinit
+typeset -U path cdpath fpath manpath
+autoload -U compinit
+compinit
 HISTSIZE="10000"
 SAVEHIST="10000"
 HISTFILE="$HOME/.zsh_history"

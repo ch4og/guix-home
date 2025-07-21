@@ -1,5 +1,5 @@
-# Copyright © 2025 Nikita Mitasov <mitanick@ya.ru>
 #compdef config
+# Copyright © 2025 Nikita Mitasov <mitanick@ya.ru>
 
 local -a commands
 commands=(
