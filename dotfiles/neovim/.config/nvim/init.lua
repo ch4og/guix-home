@@ -25,7 +25,13 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    { 'wakatime/vim-wakatime', lazy = false }
+    { 'wakatime/vim-wakatime', lazy = false },
+    {
+      "supermaven-inc/supermaven-nvim",
+      config = function()
+        require("supermaven-nvim").setup({})
+      end,
+    }
     -- add your plugins here
   },
   -- Configure any other settings here. See the documentation for more details.

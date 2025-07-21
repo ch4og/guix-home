@@ -53,7 +53,7 @@
 										       "kitty"
 										       "mwc"
 										       "nix"
-										       "nvim"
+										       "neovim"
 										       "rofi"
 										       "ssh"
 										       "starship"
